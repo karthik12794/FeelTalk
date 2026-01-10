@@ -8,18 +8,15 @@
 </head>
 <body>
 
-  <!-- Locker Video -->
   <video id="lockerVideo" autoplay muted playsinline class="bg-video">
     <source src="assets/videos/locker_video.mp4" type="video/mp4">
   </video>
 
-  <!-- Locker Image (hidden initially) -->
   <img src="assets/images/locker_open.png" id="lockerImage" class="bg-video" style="display:none;">
 
   <div class="overlay"></div>
 
-  <!-- PIN Box -->
-  <div class="login-box" id="pinBox" style="display:none;">
+  <div class="login-box" id="pinBox" style="display:none; flex-direction: column;">
     <h1>Enter Your PIN</h1>
 
     <input type="password" id="pinInput" maxlength="4" placeholder="4-digit PIN">

@@ -1,92 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>FeelTalk – Diary</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<title>FeelTalk – Diary</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <marquee class="scroll-text">
-    © FeelTalk — Your feelings are safe here. Be free. Be open. 💙
-  </marquee>
+<marquee class="scroll-text">© FeelTalk — Your feelings are safe here. Be free. Be open. 💙</marquee>
 
-  <div class="diary-bg"></div>
+<div class="diary-bg"></div>
 
-  <div class="top-bar">
-    <span class="tab active" onclick="showHome()">Home</span>
-    <span class="tab" onclick="showSettings()">Settings</span>
-  </div>
+<div class="top-bar">
+  <span class="tab active" onclick="showHome()">Home</span>
+  <span class="tab" onclick="showSettings()">Settings</span>
+</div>
 
-  <div id="homeSection">
-    <div class="diary-page">
-      <div class="left-page">
-        <h3 id="dayText"></h3>
+<div id="homeSection">
+  <div class="diary-page">
+    <div class="left-page">
+      <h3 id="dayText"></h3>
+    </div>
+    <div class="right-page">
+      <h4 id="dateText"></h4>
+      <textarea id="diaryText" placeholder="Write your feelings here..." maxlength="300"></textarea>
+      <div class="counter"><span id="wordCount">0</span>/300 words</div>
+
+      <div class="attachments">
+        <input type="file" id="photoInput" accept="image/*" multiple>
+        <input type="file" id="videoInput" accept="video/*">
       </div>
 
-      <div class="right-page">
-        <h4 id="dateText"></h4>
-        <textarea id="diaryText" placeholder="Write your feelings here..." maxlength="300"></textarea>
-        <div class="counter"><span id="wordCount">0</span>/300 words</div>
-
-        <div class="attachments">
-          <input type="file" id="photoInput" accept="image/*" multiple>
-          <input type="file" id="videoInput" accept="video/*">
-        </div>
-
-        <div class="yt-box">
-          <input type="text" id="ytLink" placeholder="Paste YouTube link">
-          <button onclick="playYT()">Play</button>
-        </div>
-        <div id="ytPlayer"></div>
-
-        <button class="save-btn" onclick="saveDiary()">Save Page</button>
+      <div class="yt-box">
+        <input type="text" id="ytLink" placeholder="Paste YouTube link">
+        <button onclick="playYT()">Play</button>
       </div>
+      <div id="ytPlayer"></div>
+
+      <button class="save-btn" onclick="saveDiary()">Save Page</button>
     </div>
   </div>
+</div>
 
-  <div id="settingsSection" style="display:none; padding:20px;">
-    <!-- WALLET & PAGES & SUBSCRIPTION & STUDY MODE -->
-    <div class="settings-block">
-      <h3>💰 Wallet</h3>
-      <p>Balance: ₹<span id="walletBalance">0</span></p>
-      <input type="number" id="addAmount" placeholder="Enter amount">
-      <button onclick="addMoney()">Add Money</button>
-    </div>
-
-    <div class="settings-block">
-      <h3>📄 Pages</h3>
-      <p>Used Pages: <span id="usedPages">0</span></p>
-      <p>Total Pages Allowed: <span id="totalPages">150</span></p>
-      <button onclick="buyPages(80,20)">Buy 80 Pages – ₹20</button>
-    </div>
-
-    <div class="settings-block">
-      <h3>⭐ Subscription</h3>
-      <button onclick="buySubscription(1)">₹150 – 300 Pages (30 Days)</button>
-      <button onclick="buySubscription(2)">₹200 – 500 Pages (50 Days)</button>
-    </div>
-
-    <div class="settings-block">
-      <h3>📖 Study Mode</h3>
-      <button onclick="openStudyMode()">Open Study Mode</button>
-    </div>
-
-    <div class="settings-block">
-      <h3>⬇ Download Diary</h3>
-      <input type="date" id="downloadDate">
-      <button onclick="downloadByDate()">Download Selected Date</button>
-      <button onclick="downloadFullDiary()">Download Full Diary</button>
-    </div>
+<div id="settingsSection" style="display:none; padding:20px;">
+  <div class="settings-block">
+    <h3>💰 Wallet</h3>
+    <p>Balance: ₹<span id="walletBalance">0</span></p>
+    <input type="number" id="addAmount" placeholder="Enter amount">
+    <button onclick="addMoney()">Add Money</button>
   </div>
 
-  <div id="studyMode" style="display:none; padding:20px;">
-    <h2>📚 Study Mode</h2>
-    <button onclick="closeStudyMode()">⬅ Back</button>
-    <div id="studyContent"></div>
+  <div class="settings-block">
+    <h3>📄 Pages</h3>
+    <p>Used Pages: <span id="usedPages">0</span></p>
+    <p>Total Pages Allowed: <span id="totalPages">150</span></p>
+    <button onclick="buyPages(80,20)">Buy 80 Pages – ₹20</button>
   </div>
 
-  <script src="js/diary.js"></script>
+  <div class="settings-block">
+    <h3>⭐ Subscription</h3>
+    <button onclick="buySubscription(1)">₹150 – 300 Pages (30 Days)</button>
+    <button onclick="buySubscription(2)">₹200 – 500 Pages (50 Days)</button>
+  </div>
+
+  <div class="settings-block">
+    <h3>📖 Study Mode</h3>
+    <button onclick="openStudyMode()">Open Study Mode</button>
+  </div>
+
+  <div class="settings-block">
+    <h3>⬇ Download Diary</h3>
+    <input type="date" id="downloadDate">
+    <button onclick="downloadByDate()">Download Selected Date</button>
+    <button onclick="downloadFullDiary()">Download Full Diary</button>
+  </div>
+</div>
+
+<div id="studyMode" style="display:none; padding:20px;">
+  <h2>📚 Study Mode</h2>
+  <button onclick="closeStudyMode()">⬅ Back</button>
+  <div id="studyContent"></div>
+</div>
+
+<script src="js/diary.js"></script>
 </body>
 </html>

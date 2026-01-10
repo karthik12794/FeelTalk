@@ -21,14 +21,12 @@
 
   <div id="homeSection">
     <div class="diary-page">
-
       <div class="left-page">
         <h3 id="dayText"></h3>
       </div>
 
       <div class="right-page">
         <h4 id="dateText"></h4>
-
         <textarea id="diaryText" placeholder="Write your feelings here..." maxlength="300"></textarea>
         <div class="counter"><span id="wordCount">0</span>/300 words</div>
 
@@ -41,17 +39,15 @@
           <input type="text" id="ytLink" placeholder="Paste YouTube link">
           <button onclick="playYT()">Play</button>
         </div>
-
         <div id="ytPlayer"></div>
 
         <button class="save-btn" onclick="saveDiary()">Save Page</button>
       </div>
-
     </div>
   </div>
 
   <div id="settingsSection" style="display:none; padding:20px;">
-
+    <!-- WALLET & PAGES & SUBSCRIPTION & STUDY MODE -->
     <div class="settings-block">
       <h3>💰 Wallet</h3>
       <p>Balance: ₹<span id="walletBalance">0</span></p>
@@ -83,7 +79,6 @@
       <button onclick="downloadByDate()">Download Selected Date</button>
       <button onclick="downloadFullDiary()">Download Full Diary</button>
     </div>
-
   </div>
 
   <div id="studyMode" style="display:none; padding:20px;">

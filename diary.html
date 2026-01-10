@@ -8,49 +8,35 @@
 </head>
 <body>
 
-  <!-- SCROLLING PRIVACY TEXT -->
   <marquee class="scroll-text">
     © FeelTalk — Your feelings are safe here. Be free. Be open. 💙
   </marquee>
 
-  <!-- Background -->
   <div class="diary-bg"></div>
 
-  <!-- Top Bar -->
   <div class="top-bar">
     <span class="tab active" onclick="showHome()">Home</span>
     <span class="tab" onclick="showSettings()">Settings</span>
   </div>
 
-  <!-- ================= HOME SECTION ================= -->
   <div id="homeSection">
-
     <div class="diary-page">
 
-      <!-- Left Page -->
       <div class="left-page">
         <h3 id="dayText"></h3>
       </div>
 
-      <!-- Right Page -->
       <div class="right-page">
         <h4 id="dateText"></h4>
 
-        <textarea id="diaryText"
-          placeholder="Write your feelings here..."
-          maxlength="300"></textarea>
+        <textarea id="diaryText" placeholder="Write your feelings here..." maxlength="300"></textarea>
+        <div class="counter"><span id="wordCount">0</span>/300 words</div>
 
-        <div class="counter">
-          <span id="wordCount">0</span>/300 words
-        </div>
-
-        <!-- Attachments -->
         <div class="attachments">
           <input type="file" id="photoInput" accept="image/*" multiple>
           <input type="file" id="videoInput" accept="video/*">
         </div>
 
-        <!-- YouTube -->
         <div class="yt-box">
           <input type="text" id="ytLink" placeholder="Paste YouTube link">
           <button onclick="playYT()">Play</button>
@@ -64,43 +50,28 @@
     </div>
   </div>
 
-  <!-- ================= SETTINGS SECTION ================= -->
   <div id="settingsSection" style="display:none; padding:20px;">
 
-    <!-- WALLET -->
     <div class="settings-block">
       <h3>💰 Wallet</h3>
       <p>Balance: ₹<span id="walletBalance">0</span></p>
-
       <input type="number" id="addAmount" placeholder="Enter amount">
       <button onclick="addMoney()">Add Money</button>
     </div>
 
-    <!-- PAGES -->
     <div class="settings-block">
       <h3>📄 Pages</h3>
       <p>Used Pages: <span id="usedPages">0</span></p>
       <p>Total Pages Allowed: <span id="totalPages">150</span></p>
-
-      <button onclick="buyPages(80,20)">
-        Buy 80 Pages – ₹20
-      </button>
+      <button onclick="buyPages(80,20)">Buy 80 Pages – ₹20</button>
     </div>
 
-    <!-- SUBSCRIPTION -->
     <div class="settings-block">
       <h3>⭐ Subscription</h3>
-
-      <button onclick="buySubscription(1)">
-        ₹150 – 300 Pages (30 Days)
-      </button>
-
-      <button onclick="buySubscription(2)">
-        ₹200 – 500 Pages (50 Days)
-      </button>
+      <button onclick="buySubscription(1)">₹150 – 300 Pages (30 Days)</button>
+      <button onclick="buySubscription(2)">₹200 – 500 Pages (50 Days)</button>
     </div>
 
-    <!-- STUDY MODE & DOWNLOAD DIARY -->
     <div class="settings-block">
       <h3>📖 Study Mode</h3>
       <button onclick="openStudyMode()">Open Study Mode</button>
@@ -115,7 +86,6 @@
 
   </div>
 
-  <!-- ================= STUDY MODE SECTION ================= -->
   <div id="studyMode" style="display:none; padding:20px;">
     <h2>📚 Study Mode</h2>
     <button onclick="closeStudyMode()">⬅ Back</button>

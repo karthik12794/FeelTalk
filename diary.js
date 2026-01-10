@@ -1,14 +1,31 @@
-/***********************
-  WALLET & PAGE DATA
-************************/
+/* ========================== */
+/*   ENTER DIARY / BOOK VIDEO */
+/* ========================== */
+
+const entryBox = document.getElementById("entryBox");
+const bookVideo = document.getElementById("bookVideo");
+
+function openDiary() {
+  if(entryBox) entryBox.style.display = "none"; // hide entry box
+  if(bookVideo){
+    bookVideo.style.display = "block";          // show video
+    bookVideo.play();
+
+    // After video ends → go to diary page
+    bookVideo.onended = () => {
+      window.location.href = "diary.html";
+    };
+  }
+}
+
+/* ========================== */
+/*        WALLET & PAGES      */
+/* ========================== */
 let wallet = Number(localStorage.getItem("wallet")) || 0;
 let usedPages = Number(localStorage.getItem("usedPages")) || 0;
 let totalPages = Number(localStorage.getItem("totalPages")) || 150;
 let subscription = JSON.parse(localStorage.getItem("subscription")) || null;
 
-/***********************
-  LOAD WALLET & PAGES
-************************/
 function loadWalletAndPages() {
   const wb = document.getElementById("walletBalance");
   const up = document.getElementById("usedPages");
@@ -21,9 +38,9 @@ function loadWalletAndPages() {
 
 loadWalletAndPages();
 
-/***********************
-  TAB SWITCH
-************************/
+/* ========================== */
+/*        TAB SWITCH          */
+/* ========================== */
 function showHome() {
   document.getElementById("homeSection").style.display = "block";
   document.getElementById("settingsSection").style.display = "none";
@@ -34,29 +51,33 @@ function showSettings() {
   document.getElementById("settingsSection").style.display = "block";
 }
 
-/***********************
-  DATE & DAY
-************************/
+/* ========================== */
+/*      DATE & DAY             */
+/* ========================== */
 const now = new Date();
 const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
-document.getElementById("dayText").innerText = days[now.getDay()];
-document.getElementById("dateText").innerText = now.toDateString();
+if(document.getElementById("dayText")) 
+  document.getElementById("dayText").innerText = days[now.getDay()];
+if(document.getElementById("dateText")) 
+  document.getElementById("dateText").innerText = now.toDateString();
 
-/***********************
-  WORD COUNTER
-************************/
+/* ========================== */
+/*      WORD COUNTER           */
+/* ========================== */
 const textarea = document.getElementById("diaryText");
 const counter = document.getElementById("wordCount");
 
-textarea.addEventListener("input", () => {
-  const words = textarea.value.trim().split(/\s+/).filter(Boolean);
-  counter.innerText = words.length;
-});
+if(textarea){
+  textarea.addEventListener("input", () => {
+    const words = textarea.value.trim().split(/\s+/).filter(Boolean);
+    counter.innerText = words.length;
+  });
+}
 
-/***********************
-  YOUTUBE PLAYER
-************************/
+/* ========================== */
+/*      YOUTUBE PLAYER         */
+/* ========================== */
 function playYT() {
   const link = document.getElementById("ytLink").value;
   if (!link) return;
@@ -81,12 +102,11 @@ function playYT() {
     </iframe>`;
 }
 
-/***********************
-  SAVE DIARY PAGE
-************************/
+/* ========================== */
+/*      SAVE DIARY PAGE        */
+/* ========================== */
 function saveDiary() {
 
-  // PAGE LIMIT CHECK
   if (usedPages >= totalPages) {
     alert("Page limit reached. Buy more pages.");
     return;
@@ -119,9 +139,9 @@ function saveDiary() {
   loadWalletAndPages();
 }
 
-/***********************
-  WALLET FUNCTIONS
-************************/
+/* ========================== */
+/*      WALLET FUNCTIONS       */
+/* ========================== */
 function addMoney() {
   const amount = Number(document.getElementById("addAmount").value);
 
@@ -137,9 +157,9 @@ function addMoney() {
   loadWalletAndPages();
 }
 
-/***********************
-  BUY PAGES
-************************/
+/* ========================== */
+/*      BUY PAGES              */
+/* ========================== */
 function buyPages(pages, cost) {
   if (wallet < cost) {
     alert("Insufficient wallet balance");
@@ -156,9 +176,9 @@ function buyPages(pages, cost) {
   loadWalletAndPages();
 }
 
-/***********************
-  SUBSCRIPTION
-************************/
+/* ========================== */
+/*      SUBSCRIPTION           */
+/* ========================== */
 function buySubscription(plan) {
   let subData;
 
@@ -188,6 +208,10 @@ function buySubscription(plan) {
   alert("Subscription Activated 🎉");
   loadWalletAndPages();
 }
+
+/* ========================== */
+/*       STUDY MODE            */
+/* ========================== */
 function openStudyMode() {
   document.getElementById("homeSection").style.display = "none";
   document.getElementById("settingsSection").style.display = "none";

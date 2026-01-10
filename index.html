@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FeelTalk</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Background Video -->
+  <video class="bg-video" autoplay muted loop playsinline>
+    <source src="assets/videos/login_intro.mp4" type="video/mp4">
+  </video>
+
+  <!-- Dark overlay -->
+  <div class="overlay"></div>
+
+  <!-- Login Container -->
+  <div class="login-box">
+    <h1>FeelTalk</h1>
+    <p>Your private space to feel & heal</p>
+
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+
+    <button onclick="login()">Login</button>
+
+    <span class="link" onclick="window.location.href='signup.html'">
+  Create New Account
+</span>
+  </div>
+
+  <!-- Background Music -->
+  <audio id="bgMusic" loop>
+    <source src="assets/music/background.mp3" type="audio/mp3">
+  </audio>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

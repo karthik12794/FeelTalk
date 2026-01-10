@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>FeelTalk – Create Account</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <title>FeelTalk – Signup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<video id="bgVideo" class="bg-video" autoplay muted loop playsinline>
-  <source src="assets/videos/login_intro.mp4" type="video/mp4">
-</video>
+  <!-- Background Video -->
+  <video id="signupVideo" class="bg-video" autoplay muted playsinline>
+    <source src="assets/videos/login_intro.mp4" type="video/mp4">
+  </video>
 
-<div class="overlay"></div>
+  <div class="overlay"></div>
 
-<div class="login-box">
-  <h1>Create Account</h1>
-  <p>Start your FeelTalk journey</p>
-  <input type="text" id="su_username" placeholder="Username">
-  <input type="password" id="su_password" placeholder="Password">
-  <input type="password" id="su_confirm" placeholder="Confirm Password">
-  <button onclick="signup()">Signup</button>
-  <span class="link" onclick="goToLogin()">Back to Login</span>
-</div>
+  <div class="login-box">
+    <h1>Create Account</h1>
+    <p>Start your FeelTalk journey</p>
 
-<audio id="bgMusic" loop>
-  <source src="assets/music/background.mp3" type="audio/mp3">
-</audio>
+    <input type="text" id="su_username" placeholder="Username">
+    <input type="password" id="su_password" placeholder="Password">
+    <input type="password" id="su_confirm" placeholder="Confirm Password">
 
-<script src="js/auth.js"></script>
+    <button id="signupBtn">Signup</button>
+    <span class="link" id="goLogin">Back to Login</span>
+  </div>
+
+  <audio id="bgMusic" loop>
+    <source src="assets/music/background.mp3" type="audio/mp3">
+  </audio>
+
+  <script src="js/auth.js"></script>
 </body>
 </html>

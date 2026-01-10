@@ -57,3 +57,4 @@ function signup(){
   alert("Account created successfully");
   window.location.href = "index.html";
 }
+

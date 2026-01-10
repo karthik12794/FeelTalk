@@ -142,3 +142,4 @@ function closeStudyMode(){
   document.getElementById("studyMode").style.display="none";
   showHome();
 }
+

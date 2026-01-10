@@ -1,19 +1,17 @@
 /* -------- MUSIC (Mobile Safe) -------- */
 document.body.addEventListener("click", () => {
   const music = document.getElementById("bgMusic");
-  if(music){
-    music.play();
-  }
+  if (music) music.play();
 }, { once: true });
 
 /* -------- LOGIN -------- */
-function login(){
+function login() {
   const user = document.getElementById("username").value;
   const pass = document.getElementById("password").value;
 
   const savedUser = JSON.parse(localStorage.getItem("feeltalkUser"));
 
-  if(savedUser && user === savedUser.username && pass === savedUser.password){
+  if (savedUser && user === savedUser.username && pass === savedUser.password) {
     localStorage.setItem("feeltalkLoggedIn", "true");
     window.location.href = "locker.html";
   } else {
@@ -22,17 +20,17 @@ function login(){
 }
 
 /* -------- SIGNUP -------- */
-function signup(){
+function signup() {
   const username = document.getElementById("su_username").value;
   const password = document.getElementById("su_password").value;
   const confirm  = document.getElementById("su_confirm").value;
 
-  if(!username || !password || !confirm){
+  if (!username || !password || !confirm) {
     alert("Please fill all fields");
     return;
   }
 
-  if(password !== confirm){
+  if (password !== confirm) {
     alert("Passwords do not match");
     return;
   }
@@ -50,6 +48,6 @@ function signup(){
 }
 
 /* -------- NAVIGATION -------- */
-function goToLogin(){
+function goToLogin() {
   window.location.href = "index.html";
 }

@@ -1,12 +1,17 @@
-/* -------- MOBILE MUSIC START -------- */
+/* -------- MUSIC (Mobile Safe) -------- */
 document.body.addEventListener("click", () => {
   const music = document.getElementById("bgMusic");
   if(music){
-    music.play().catch(()=>{});
+    music.play();
   }
 }, { once: true });
 
 /* -------- LOGIN -------- */
+document.getElementById("loginBtn").addEventListener("click", login);
+document.getElementById("goSignup").addEventListener("click", () => {
+  window.location.href = "signup.html";
+});
+
 function login(){
   const user = document.getElementById("username").value.trim();
   const pass = document.getElementById("password").value.trim();
@@ -22,6 +27,11 @@ function login(){
 }
 
 /* -------- SIGNUP -------- */
+document.getElementById("signupBtn")?.addEventListener("click", signup);
+document.getElementById("goLogin")?.addEventListener("click", () => {
+  window.location.href = "index.html";
+});
+
 function signup(){
   const username = document.getElementById("su_username").value.trim();
   const password = document.getElementById("su_password").value.trim();
@@ -45,10 +55,5 @@ function signup(){
 
   localStorage.setItem("feeltalkUser", JSON.stringify(userData));
   alert("Account created successfully");
-  window.location.href = "index.html";
-}
-
-/* -------- NAVIGATION -------- */
-function goToLogin(){
   window.location.href = "index.html";
 }

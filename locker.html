@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>FeelTalk – Locker</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<title>FeelTalk – Locker</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <video id="lockerVideo" autoplay muted playsinline class="bg-video">
-    <source src="assets/videos/locker_video.mp4" type="video/mp4">
-  </video>
+<video id="lockerVideo" autoplay muted playsinline class="bg-video">
+  <source src="assets/videos/locker_video.mp4" type="video/mp4">
+</video>
 
-  <img src="assets/images/locker_open.png" id="lockerImage" class="bg-video" style="display:none;">
+<img src="assets/images/locker_open.png" id="lockerImage" class="bg-video" style="display:none;">
 
-  <div class="overlay"></div>
+<div class="overlay"></div>
 
-  <div class="login-box" id="pinBox" style="display:none;">
-    <h1>Enter Your PIN</h1>
-    <input type="password" id="pinInput" maxlength="4" placeholder="4-digit PIN">
-    <button onclick="checkPin()">Unlock</button>
-    <span class="link" onclick="createPin()">Create New PIN</span>
-    <span class="link" onclick="resetPin()">Reset PIN</span>
-  </div>
+<div class="login-box" id="pinBox" style="display:none;">
+  <h1>Enter Your PIN</h1>
+  <input type="password" id="pinInput" maxlength="4" placeholder="4-digit PIN">
+  <button onclick="checkPin()">Unlock</button>
+  <span class="link" onclick="createPin()">Create New PIN</span>
+  <span class="link" onclick="resetPin()">Reset PIN</span>
+</div>
 
-  <script src="js/locker.js"></script>
+<script src="js/locker.js"></script>
 </body>
 </html>
